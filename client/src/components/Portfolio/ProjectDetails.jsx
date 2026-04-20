@@ -97,10 +97,11 @@ const ProjectDetails = () => {
                                 alt={project.title}
                                 style={{
                                     width: '100%',
-                                    borderRadius: '20px',
+                                    borderRadius: '12px',
                                     boxShadow: 'var(--shadow-lg)',
-                                    objectFit: 'cover',
-                                    aspectRatio: '16/9'
+                                    objectFit: 'contain',
+                                    maxHeight: '600px',
+                                    background: 'rgba(0,0,0,0.05)'
                                 }}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: 1, scale: 1 }}

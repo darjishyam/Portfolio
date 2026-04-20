@@ -24,7 +24,7 @@ export const portfolioData = {
       image: "/quickblog_thumbnail.png",
       links: {
         demo: "https://quickblog-frontend-nine.vercel.app/",
-        github: "#"
+        github: "https://github.com/darjishyam/Quickblog"
       },
       features: [
         "Admin Dashboard for managing posts and users",
