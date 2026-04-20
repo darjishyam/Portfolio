@@ -41,7 +41,11 @@ const ProjectCard = ({ project }) => {
         mouseY.set(0.5);
     };
 
-    const handleCardClick = () => {
+    const handleCardClick = (e) => {
+        // If the click happened on a link or button, don't navigate
+        if (e.target.closest('a') || e.target.closest('button')) {
+            return;
+        }
         navigate(`/project/${project.id}`);
     };
 

@@ -46,7 +46,7 @@ const ProjectDetails = () => {
 
             <div className="portfolio-container" style={{ paddingTop: '2rem', paddingBottom: '4rem' }}>
                 <button
-                    onClick={() => navigate(-1)}
+                    onClick={() => navigate('/')}
                     style={{
                         background: 'none',
                         border: 'none',
