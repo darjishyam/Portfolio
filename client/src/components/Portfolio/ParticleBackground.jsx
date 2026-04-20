@@ -11,7 +11,6 @@ const ParticleBackground = () => {
         let particles = [];
         const particleCount = window.innerWidth < 768 ? 40 : 100;
         const connectionDistance = 150;
-        const mouseRadius = 150;
 
         let mouse = { x: null, y: null };
 
