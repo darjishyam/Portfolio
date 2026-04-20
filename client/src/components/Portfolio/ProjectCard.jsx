@@ -89,18 +89,23 @@ const ProjectCard = ({ project }) => {
                     borderRadius: '12px',
                     overflow: 'hidden',
                     transform: imageZ,
-                    transition: 'transform 0.3s ease'
+                    transition: 'transform 0.3s ease',
+                    background: 'rgba(255,255,255,0.03)',
+                    height: '250px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                 }}
             >
                 <motion.img
                     src={project.image}
                     alt={project.title}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.4 }}
                     style={{
-                        width: '100%',
-                        height: '200px',
-                        objectFit: 'cover',
+                        maxWidth: '100%',
+                        maxHeight: '100%',
+                        objectFit: 'contain',
                         display: 'block'
                     }}
                 />
@@ -108,96 +113,88 @@ const ProjectCard = ({ project }) => {
 
             {/* Title */}
             <h3 style={{
-                fontSize: '1.8rem',
+                fontSize: '1.6rem',
                 marginBottom: '0.5rem',
                 fontFamily: 'var(--font-heading)',
-                color: 'var(--text-main)'
+                color: 'var(--text-main)',
+                fontWeight: 700
             }}>
                 {project.title}
             </h3>
 
             {/* Description */}
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', flexGrow: 1, lineHeight: 1.6 }}>
+            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', flexGrow: 1, lineHeight: 1.5, fontSize: '0.95rem' }}>
                 {project.description}
             </p>
 
-            {/* Tags — Z layer 2 (float forward more) */}
+            {/* Action Buttons — High Impact Mockup Style */}
             <motion.div
                 style={{
                     display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem',
-                    marginBottom: '1.5rem',
-                    transform: tagsZ,
-                    transition: 'transform 0.3s ease'
-                }}
-            >
-                {project.tags.map((tag, index) => (
-                    <motion.span
-                        key={index}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        style={{
-                            fontSize: '0.8rem',
-                            padding: '0.3rem 0.8rem',
-                            borderRadius: '20px',
-                            background: 'rgba(99, 102, 241, 0.12)',
-                            color: 'var(--primary)',
-                            border: '1px solid rgba(99, 102, 241, 0.25)',
-                            cursor: 'default'
-                        }}
-                    >
-                        {tag}
-                    </motion.span>
-                ))}
-            </motion.div>
-
-            {/* Icons — Z layer 3 (float farthest forward, like holograms) */}
-            <motion.div
-                style={{
-                    display: 'flex',
-                    gap: '1rem',
+                    alignItems: 'center',
+                    gap: '0.8rem',
                     marginTop: 'auto',
+                    flexWrap: 'wrap',
                     transform: iconsZ,
                     transition: 'transform 0.3s ease'
                 }}
             >
-                <motion.a
-                    href={project.links.github}
-                    onClick={(e) => e.stopPropagation()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.3, color: 'var(--primary)', y: -4 }}
-                    style={{ color: 'var(--text-main)', fontSize: '1.6rem', transition: 'color 0.3s' }}
-                >
-                    <FaGithub />
-                </motion.a>
+                {/* Watch Video Button */}
                 <motion.a
                     href={project.links.demo}
-                    onClick={(e) => e.stopPropagation()}
                     target="_blank"
                     rel="noopener noreferrer"
-                    whileHover={{ scale: 1.3, color: 'var(--secondary)', y: -4 }}
-                    style={{ color: 'var(--text-main)', fontSize: '1.6rem', transition: 'color 0.3s' }}
-                >
-                    <FaExternalLinkAlt />
-                </motion.a>
-                <motion.div
+                    onClick={(e) => e.stopPropagation()}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
                     style={{
-                        marginLeft: 'auto',
-                        padding: '0.4rem 1rem',
-                        borderRadius: '50px',
-                        background: 'var(--gradient-main)',
+                        flex: '1.5',
+                        minWidth: '200px',
+                        padding: '0.8rem 1.2rem',
+                        borderRadius: '12px',
+                        background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
                         color: 'white',
-                        fontSize: '0.8rem',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
                         fontWeight: 700,
-                        opacity: 0,
-                        transform: 'translateX(20px)',
-                        transition: 'all 0.3s ease'
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        boxShadow: '0 10px 20px -10px rgba(236, 72, 153, 0.5)'
                     }}
-                    className="view-details-pill"
                 >
-                    View Project Details
-                </motion.div>
+                    <FaExternalLinkAlt style={{ fontSize: '1rem' }} />
+                    Watch Video Walkthrough
+                </motion.a>
+
+                {/* GitHub Pill */}
+                <motion.a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    whileHover={{ scale: 1.05, y: -2, background: 'rgba(255,255,255,1)' }}
+                    whileTap={{ scale: 0.95 }}
+                    style={{
+                        flex: '0.8',
+                        padding: '0.8rem 1.2rem',
+                        borderRadius: '50px',
+                        background: 'rgba(255,255,255,0.9)',
+                        color: '#000',
+                        textDecoration: 'none',
+                        fontSize: '0.9rem',
+                        fontWeight: 700,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '0.5rem',
+                        boxShadow: '0 4px 10px rgba(0,0,0,0.1)'
+                    }}
+                >
+                    <FaGithub style={{ fontSize: '1.1rem' }} />
+                    GitHub
+                </motion.a>
             </motion.div>
         </motion.div>
     );

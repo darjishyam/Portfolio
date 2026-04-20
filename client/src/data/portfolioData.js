@@ -163,7 +163,7 @@ export const portfolioData = {
       ],
       links: {
         demo: "https://youtu.be/_FzwTYuOQBI",
-        github: "#"
+        github: "https://github.com/darjishyam/freshdrop"
       },
       features: [
         "Advanced proximity-based restaurant and grocery searching",
