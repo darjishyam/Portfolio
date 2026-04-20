@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001/api";
+const API_URL = process.env.REACT_APP_API_URL || "https://portfolio-2tv3.onrender.com/api";
 
 const useAnalytics = () => {
     const trackHit = useCallback(async (path) => {

@@ -5,7 +5,7 @@ import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/f
 import '../components/Portfolio/Portfolio.css';
 import '../App.css';
 
-const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5001/api";
+const API_URL = process.env.REACT_APP_API_URL || "https://portfolio-2tv3.onrender.com/api";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
