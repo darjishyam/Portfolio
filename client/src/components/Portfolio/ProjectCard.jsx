@@ -94,8 +94,8 @@ const ProjectCard = ({ project }) => {
                     overflow: 'hidden',
                     transform: imageZ,
                     transition: 'transform 0.3s ease',
-                    background: 'rgba(255,255,255,0.03)',
-                    height: '250px',
+                    background: 'rgba(255,255,255,0.02)',
+                    height: '450px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center'
@@ -104,13 +104,14 @@ const ProjectCard = ({ project }) => {
                 <motion.img
                     src={project.image}
                     alt={project.title}
-                    whileHover={{ scale: 1.05 }}
+                    whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.4 }}
                     style={{
                         maxWidth: '100%',
                         maxHeight: '100%',
                         objectFit: 'contain',
-                        display: 'block'
+                        display: 'block',
+                        borderRadius: '8px'
                     }}
                 />
             </motion.div>
