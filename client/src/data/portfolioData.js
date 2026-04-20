@@ -58,7 +58,7 @@ export const portfolioData = {
       ],
       links: {
         demo: "https://youtu.be/_FzwTYuOQBI",
-        github: "#"
+        github: "https://github.com/darjishyam/Resturants"
       },
       features: [
         "Real-time order notifications and queue management",
@@ -91,7 +91,7 @@ export const portfolioData = {
       ],
       links: {
         demo: "https://youtu.be/_FzwTYuOQBI",
-        github: "#"
+        github: "https://github.com/BytesvedTechnologies/SwiggyDriver"
       },
       features: [
         "Proximity-based intelligent order dispatching",
@@ -126,7 +126,7 @@ export const portfolioData = {
       ],
       links: {
         demo: "https://youtu.be/_FzwTYuOQBI",
-        github: "#"
+        github: "https://github.com/darjishyam/SwiggyAdmin-Panel"
       },
       features: [
         "Global dashboard for real-time system monitoring",
@@ -188,7 +188,7 @@ export const portfolioData = {
       ],
       links: {
         demo: "https://youtu.be/_FzwTYuOQBI",
-        github: "#"
+        github: "https://github.com/darjishyam/freshdrop"
       },
       features: [
         "Architecture of 4 specialized interconnected applications",
