@@ -456,6 +456,21 @@ body.dark-mode .hero-section {
   }
 }
 
+/* Navbar Media Queries */
+@media (max-width: 768px) {
+  .desktop-nav-links {
+    display: none !important;
+  }
+  
+  .mobile-toggle {
+    display: flex !important;
+  }
+  
+  .portfolio-navbar .portfolio-container {
+    padding: 0 1.5rem;
+  }
+}
+
 /* Project Card Hover Effects */
 .glass-panel:hover .view-details-pill {
   opacity: 1 !important;

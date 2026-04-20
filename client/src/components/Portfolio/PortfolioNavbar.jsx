@@ -1,13 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { FaSun, FaMoon, FaBars, FaTimes } from 'react-icons/fa';
 import './Portfolio.css';
 
 const PortfolioNavbar = () => {
     const [scrolled, setScrolled] = useState(false);
     const [activeSection, setActiveSection] = useState('hero');
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     // Handle Scroll for Navbar styling and Active Section
     useEffect(() => {
@@ -79,57 +80,48 @@ const PortfolioNavbar = () => {
                     href="#hero"
                     onClick={(e) => handleNavClick(e, '#hero')}
                     style={{
-                        fontSize: '1.5rem',
+                        fontSize: scrolled ? '1.3rem' : '1.5rem',
                         fontWeight: 800,
                         fontFamily: 'var(--font-heading)',
                         color: 'var(--text-main)',
                         textDecoration: 'none',
-                        letterSpacing: '-1px'
+                        letterSpacing: '-1px',
+                        transition: 'all 0.3s'
                     }}
                 >
                     DS.
                 </a>
 
-                {/* Desktop Menu */}
-                <div className="desktop-menu" style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
-                    {navLinks.map((link) => (
-                        <a
-                            key={link.title}
-                            href={link.href}
-                            onClick={(e) => handleNavClick(e, link.href)}
-                            style={{
-                                color: activeSection === link.id ? 'var(--primary)' : 'var(--text-main)',
-                                textDecoration: 'none',
-                                fontWeight: activeSection === link.id ? 700 : 500,
-                                fontSize: '1rem',
-                                position: 'relative',
-                                transition: 'color 0.3s ease'
-                            }}
-                            className="nav-link"
-                        >
-                            {link.title}
-                            {activeSection === link.id && (
-                                <motion.div
-                                    layoutId="activeNav"
-                                    style={{
-                                        position: 'absolute',
-                                        bottom: '-5px',
-                                        left: 0,
-                                        right: 0,
-                                        height: '2px',
-                                        background: 'var(--gradient-main)',
-                                        borderRadius: '2px'
-                                    }}
-                                />
-                            )}
-                        </a>
-                    ))}
+                {/* Right Side: Menu + Theme Toggle */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1.2rem' }}>
+                    
+                    {/* Desktop Menu (Hidden on Mobile via CSS) */}
+                    <div className="desktop-nav-links">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.title}
+                                href={link.href}
+                                onClick={(e) => handleNavClick(e, link.href)}
+                                style={{
+                                    color: activeSection === link.id ? 'var(--primary)' : 'var(--text-main)',
+                                    textDecoration: 'none',
+                                    fontWeight: activeSection === link.id ? 700 : 500,
+                                    fontSize: '0.95rem',
+                                    marginLeft: '2rem',
+                                    position: 'relative'
+                                }}
+                                className="nav-link"
+                            >
+                                {link.title}
+                            </a>
+                        ))}
+                    </div>
 
-                    {/* Theme Toggle Button */}
+                    {/* Theme Toggle Button (Always Visible) */}
                     <button
                         onClick={() => setIsDarkMode(!isDarkMode)}
                         style={{
-                            background: 'transparent',
+                            background: 'rgba(128, 128, 128, 0.1)',
                             border: 'none',
                             cursor: 'pointer',
                             fontSize: '1.2rem',
@@ -137,16 +129,73 @@ const PortfolioNavbar = () => {
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center',
-                            padding: '0.5rem',
+                            padding: '0.6rem',
                             borderRadius: '50%',
-                            transition: 'background 0.3s ease'
+                            transition: 'all 0.3s ease'
                         }}
                         className="theme-toggle"
                     >
                         {isDarkMode ? <FaSun /> : <FaMoon />}
                     </button>
+
+                    {/* Mobile Toggle Button */}
+                    <button
+                        className="mobile-toggle"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        style={{
+                            display: 'none',
+                            background: 'transparent',
+                            border: 'none',
+                            color: 'var(--text-main)',
+                            fontSize: '1.5rem',
+                            cursor: 'pointer'
+                        }}
+                    >
+                        {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
                 </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            <motion.div
+                initial={{ x: '100%' }}
+                animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
+                transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                style={{
+                    position: 'fixed',
+                    top: 0,
+                    right: 0,
+                    width: '100%',
+                    height: '100vh',
+                    background: 'var(--nav-bg)',
+                    backdropFilter: 'blur(30px)',
+                    zIndex: 1050,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    padding: '8rem 2rem',
+                    gap: '2.5rem'
+                }}
+                className="mobile-menu-overlay"
+            >
+                {navLinks.map((link) => (
+                    <a
+                        key={link.title}
+                        href={link.href}
+                        onClick={(e) => {
+                            handleNavClick(e, link.href);
+                            setIsMobileMenuOpen(false);
+                        }}
+                        style={{
+                            color: activeSection === link.id ? 'var(--primary)' : 'var(--text-main)',
+                            textDecoration: 'none',
+                            fontWeight: 700,
+                            fontSize: '1.8rem'
+                        }}
+                    >
+                        {link.title}
+                    </a>
+                ))}
+            </motion.div>
         </nav>
     );
 };

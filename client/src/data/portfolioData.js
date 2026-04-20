@@ -5,7 +5,7 @@ import { SiTypescript, SiMongodb, SiGraphql, SiNextdotjs, SiDotnet, SiPostgresql
 export const portfolioData = {
   hero: {
     name: "Darji Shyam",
-    titles: ["Full Stack Developer", "UI/UX Enthusiast", "Creative Coder"],
+    titles: ["Full Stack Developer", "Java Developer", "Python Developer", "Creative Coder"],
     description: "Building digital experiences that blend aesthetic perfection with robust engineering.",
     socials: {
       github: "https://github.com/darjishyam",
