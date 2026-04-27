@@ -165,7 +165,7 @@ const Hero = () => {
                                 Check out my work
                             </motion.button>
                             <motion.a
-                                href="/resume.pdf"
+                                href="/resume(shyam).pdf"
                                 download="Darji_Shyam_Resume.pdf"
                                 className="glass-panel"
                                 whileHover={{ scale: 1.05, y: -5, background: 'rgba(255,255,255,0.1)' }}
