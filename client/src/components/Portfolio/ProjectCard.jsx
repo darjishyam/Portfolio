@@ -26,7 +26,6 @@ const ProjectCard = ({ project }) => {
 
     // Pop-out Z layers
     const imageZ = useTransform(springY, [0, 1], ['translateZ(0px)', 'translateZ(20px)']);
-    const tagsZ = useTransform(springY, [0, 1], ['translateZ(0px)', 'translateZ(35px)']);
     const iconsZ = useTransform(springY, [0, 1], ['translateZ(0px)', 'translateZ(50px)']);
 
     const handleMouseMove = (e) => {
