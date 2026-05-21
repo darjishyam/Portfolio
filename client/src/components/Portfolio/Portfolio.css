@@ -456,6 +456,17 @@ body.dark-mode .hero-section {
   }
 }
 
+/* Project Card Image Container Styles */
+.project-card-image-container {
+  height: 450px;
+}
+
+@media (max-width: 768px) {
+  .project-card-image-container {
+    height: 250px;
+  }
+}
+
 /* Navbar Media Queries */
 @media (max-width: 768px) {
   .desktop-nav-links {

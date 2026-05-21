@@ -87,6 +87,7 @@ const ProjectCard = ({ project }) => {
 
             {/* Image — Z layer 1 */}
             <motion.div
+                className="project-card-image-container"
                 style={{
                     marginBottom: '1.5rem',
                     borderRadius: '12px',
@@ -94,10 +95,11 @@ const ProjectCard = ({ project }) => {
                     transform: imageZ,
                     transition: 'transform 0.3s ease',
                     background: 'rgba(255,255,255,0.02)',
-                    height: '450px',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    width: '100%'
                 }}
             >
                 <motion.img
@@ -106,8 +108,8 @@ const ProjectCard = ({ project }) => {
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.4 }}
                     style={{
-                        maxWidth: '100%',
-                        maxHeight: '100%',
+                        width: '100%',
+                        height: '100%',
                         objectFit: 'contain',
                         display: 'block',
                         borderRadius: '8px'
