@@ -197,6 +197,24 @@ export const portfolioData = {
         "Scalable database schema for complex multi-user interactions",
         "Cross-platform consistency and shared design language"
       ]
+    },
+    {
+      id: 6,
+      title: "TrafficTelligence",
+      description: "Advanced Traffic Volume Estimation using Machine Learning to solve real-world urban traffic challenges.",
+      summary: "A collaborative machine learning project focusing on predicting and estimating traffic volumes using advanced data modeling techniques. Built in partnership with a fellow developer, this project explores regression models, data preprocessing, and predictive analytics to provide accurate traffic volume estimations.",
+      tags: ["Python", "Machine Learning", "Data Science", "Pandas", "Scikit-Learn"],
+      image: "/quickblog_thumbnail.png", // Placeholder image, can be updated later
+      links: {
+        demo: "#",
+        github: "https://github.com/patelhemal2010/TrafficTelligence-Advanced-Traffic-Volume-Estimation-with-Machine-Learning"
+      },
+      features: [
+        "Collaborative Machine Learning research and implementation",
+        "Advanced data preprocessing and feature engineering",
+        "Predictive modeling for urban traffic volume estimation",
+        "Exploratory Data Analysis (EDA) on large traffic datasets"
+      ]
     }
   ],
   skills: [
