@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import PortfolioNavbar from '../components/Portfolio/PortfolioNavbar';
-import BentoHero from '../components/Portfolio/BentoHero';
+import Hero from '../components/Portfolio/Hero';
 import ProjectsGrid from '../components/Portfolio/ProjectsGrid';
 import SkillsGrid from '../components/Portfolio/SkillsGrid';
 import Hobbies from '../components/Portfolio/Hobbies';
@@ -21,7 +21,7 @@ const PortfolioPage = () => {
                 <div className="mesh-blob blob-3"></div>
             </div>
             <PortfolioNavbar />
-            <BentoHero />
+            <Hero />
             <div id="skills"><SkillsGrid /></div>
             <div id="projects"><ProjectsGrid /></div>
             <div id="hobbies"><Hobbies /></div>
