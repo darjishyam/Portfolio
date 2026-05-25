@@ -51,19 +51,12 @@ const ProjectCard = ({ project }) => {
     return (
         <motion.div
             ref={cardRef}
-            className="glass-panel"
+            className="unique-project-card project-card-horizontal"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onClick={handleCardClick}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
             style={{
                 padding: '2rem',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
                 position: 'relative',
                 overflow: 'hidden',
                 cursor: 'pointer',
@@ -87,9 +80,8 @@ const ProjectCard = ({ project }) => {
 
             {/* Image — Z layer 1 */}
             <motion.div
-                className="project-card-image-container"
+                className="project-card-image-wrapper"
                 style={{
-                    marginBottom: '1.5rem',
                     borderRadius: '12px',
                     overflow: 'hidden',
                     transform: imageZ,
@@ -98,8 +90,6 @@ const ProjectCard = ({ project }) => {
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    flexShrink: 0,
-                    width: '100%'
                 }}
             >
                 <motion.img
@@ -109,48 +99,51 @@ const ProjectCard = ({ project }) => {
                     transition={{ duration: 0.4 }}
                     style={{
                         width: '100%',
-                        height: '100%',
-                        objectFit: 'contain',
+                        height: 'auto',
+                        aspectRatio: '16/9',
+                        objectFit: 'cover',
                         display: 'block',
                         borderRadius: '8px'
                     }}
                 />
             </motion.div>
 
-            {/* Title */}
-            <h3 style={{
-                fontSize: '1.6rem',
-                marginBottom: '0.5rem',
-                fontFamily: 'var(--font-heading)',
-                color: 'var(--text-main)',
-                fontWeight: 700
-            }}>
-                {project.title}
-            </h3>
+            {/* Text Content */}
+            <div className="project-card-content-wrapper" style={{ display: 'flex', flexDirection: 'column' }}>
+                {/* Title */}
+                <h3 style={{
+                    fontSize: '1.8rem',
+                    marginBottom: '1rem',
+                    fontFamily: 'var(--font-heading)',
+                    color: 'var(--text-main)',
+                    fontWeight: 700
+                }}>
+                    {project.title}
+                </h3>
 
-            {/* Description */}
-            <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', flexGrow: 1, lineHeight: 1.5, fontSize: '0.95rem' }}>
-                {project.description}
-            </p>
+                {/* Description */}
+                <p style={{ color: 'var(--text-muted)', marginBottom: '2rem', flexGrow: 1, lineHeight: 1.6, fontSize: '1rem' }}>
+                    {project.description}
+                </p>
 
-            {/* Action Buttons — High Impact Mockup Style */}
-            <motion.div
-                style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '0.8rem',
-                    marginTop: 'auto',
-                    flexWrap: 'wrap',
-                    transform: iconsZ,
-                    transition: 'transform 0.3s ease'
-                }}
-            >
-                {/* Watch Video Button */}
-                <motion.a
-                    href={project.links.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                {/* Action Buttons — High Impact Mockup Style */}
+                <motion.div
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        marginTop: 'auto',
+                        flexWrap: 'wrap',
+                        transform: iconsZ,
+                        transition: 'transform 0.3s ease'
+                    }}
+                >
+                {/* View Details Button */}
+                <motion.button
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/project/${project.id}`);
+                    }}
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                     style={{
@@ -160,7 +153,8 @@ const ProjectCard = ({ project }) => {
                         borderRadius: '12px',
                         background: 'linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%)',
                         color: 'white',
-                        textDecoration: 'none',
+                        border: 'none',
+                        cursor: 'pointer',
                         fontSize: '0.9rem',
                         fontWeight: 700,
                         display: 'flex',
@@ -171,8 +165,8 @@ const ProjectCard = ({ project }) => {
                     }}
                 >
                     <FaExternalLinkAlt style={{ fontSize: '1rem' }} />
-                    Watch Video Walkthrough
-                </motion.a>
+                    View Details
+                </motion.button>
 
                 {/* GitHub Pill */}
                 <motion.a
@@ -202,6 +196,7 @@ const ProjectCard = ({ project }) => {
                     GitHub
                 </motion.a>
             </motion.div>
+            </div>
         </motion.div>
     );
 };

@@ -16,7 +16,7 @@ const PortfolioNavbar = () => {
             setScrolled(window.scrollY > 50);
 
             // Scroll Spy Logic
-            const sections = ['hero', 'skills', 'projects', 'hobbies', 'contact'];
+            const sections = ['hero', 'skills', 'experience', 'certificates', 'projects', 'hobbies', 'contact'];
             for (const section of sections) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -46,6 +46,8 @@ const PortfolioNavbar = () => {
     const navLinks = [
         { title: 'Home', href: '#hero', id: 'hero' },
         { title: 'Skills', href: '#skills', id: 'skills' },
+        { title: 'Experience', href: '#experience', id: 'experience' },
+        { title: 'Certificates', href: '#certificates', id: 'certificates' },
         { title: 'Projects', href: '#projects', id: 'projects' },
         { title: 'Hobbies', href: '#hobbies', id: 'hobbies' },
         { title: 'Contact', href: '#contact', id: 'contact' }

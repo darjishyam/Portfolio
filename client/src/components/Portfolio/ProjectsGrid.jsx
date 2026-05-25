@@ -58,12 +58,12 @@ const ProjectsGrid = () => {
                         </motion.h2>
 
                         <div style={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                            gap: '2rem'
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '4rem'
                         }}>
                             {portfolioData.projects.map((project) => (
-                                <motion.div key={project.id} variants={itemVariants} style={{ height: '100%', position: 'relative' }}>
+                                <motion.div key={project.id} variants={itemVariants} style={{ position: 'relative' }}>
                                     {project.id === 5 && (
                                         <div style={{
                                             position: 'absolute',

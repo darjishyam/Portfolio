@@ -41,7 +41,7 @@ export const portfolioData = {
       description: "A specialized management portal for restaurant partners to oversee orders, manage menus, and track business growth in real-time.",
       summary: "This application empowers restaurant owners with a comprehensive digital storefront. It features a real-time order queue that synchronizes with the customer and driver apps, automated status updates, and a dynamic menu management system. Designed for high-pressure kitchen environments, the UI prioritizes speed and clarity, ensuring zero missed orders and efficient kitchen-to-driver handoffs.",
       tags: ["React Native", "Node.js", "Socket.io", "MongoDB", "Express"],
-      image: "/swiggy/restaurant/Firstpage(resturant).png",
+      image: "/chef_sync_portal.png",
       gallery: [
         "/swiggy/restaurant/Firstpage(resturant).png",
         "/swiggy/restaurant/Resturant(orderreceive).png",
@@ -74,7 +74,7 @@ export const portfolioData = {
       description: "A high-performance mobile tool for delivery partners, optimized for real-time navigation, proximity routing, and order fulfillment.",
       summary: "Built for speed and reliability, the Delivery Partner app acts as the vital link in the food delivery chain. It utilizes Google Maps API for optimized route calculation and Socket.io for instant proximity-based order dispatching. The app manages the entire lifecycle of a delivery—from accepting a request to restaurant pickup and final doorstep delivery—ensuring transparency for both the customer and the platform.",
       tags: ["React Native", "Google Maps API", "Socket.io", "Geolocation"],
-      image: "/swiggy/driver/Driver(profile).png",
+      image: "/fleet_motion_delivery.png",
       gallery: [
         "/swiggy/driver/Driver(profile).png",
         "/swiggy/driver/Driver(neworder).png",
@@ -107,7 +107,7 @@ export const portfolioData = {
       description: "A powerful, systemic command center for managing the entire food delivery ecosystem, from user moderation to financial oversight.",
       summary: "The Admin Console is the 'brain' of the platform. It provides a god-eye view of all ongoing operations, allowing admins to approve restaurants, manage delivery partners, moderate users, and oversee financial transactions. With a focus on data visualization and systemic control, it handles complex tasks like banner assignments, coupon management, and dispute resolution across all three sibling applications.",
       tags: ["React", "Express", "MongoDB", "Data Visualization", "Admin Panels"],
-      image: "/swiggy/admin/admin(dashboard).png",
+      image: "/nexus_admin_center.png",
       gallery: [
         "/swiggy/admin/admin(dashboard).png",
         "/swiggy/admin/Admin(users).png",
@@ -142,7 +142,7 @@ export const portfolioData = {
       description: "A feature-rich consumer application providing a seamless experience for food ordering, grocery shopping, and real-time delivery tracking.",
       summary: "This is the flagship consumer app of the ecosystem. It offers a highly interactive UI for browsing thousands of restaurants and grocery stores. Key technical highlights include a sophisticated search system, real-time proximity-based restaurant listing, and a live order tracking interface that keeps users informed at every step. The app also integrates secure payment gateways and a robust address management system for effortless ordering.",
       tags: ["React Native", "Socket.io", "Stripe", "Redux", "Google Maps"],
-      image: "/swiggy/customer/HomePage.png",
+      image: "/foodie_go_customer.png",
       gallery: [
         "/swiggy/customer/HomePage.png",
         "/swiggy/customer/particularFood.png",
@@ -179,7 +179,7 @@ export const portfolioData = {
       description: "A comprehensive overview of the entire 4-app ecosystem, synchronizing Customer, Restaurant, Driver, and Admin roles in real-time.",
       summary: "This project showcases the technical complexity of building a distributed, real-time ecosystem. It involves the architectural orchestration of four distinct specialized apps connected through a central Node.js backend. The system solves complex logistical problems such as real-time proximity dispatching, live synchronization of order states across all platforms using WebSockets (Socket.io), and high-availability data management with MongoDB. It stands as a testament to building scalable, production-ready full-stack mobile systems.",
       tags: ["System Architecture", "Microservices", "WebSockets", "Full-Stack Mobile"],
-      image: "/swiggy/customer/HomePage.png",
+      image: "/apex_ecosystem.png",
       gallery: [
         "/swiggy/customer/HomePage.png",
         "/swiggy/restaurant/Firstpage(resturant).png",
@@ -257,24 +257,23 @@ export const portfolioData = {
   experience: [
     {
       id: 1,
-      role: "Senior Frontend Engineer",
-      company: "TechNova Inc.",
-      duration: "2023 - Present",
-      description: "Leading the frontend architecture for the core SaaS platform, improving performance by 40%."
+      role: "Mern Stack Intern",
+      company: "Bytesved Technology",
+      location: "Gujarat",
+      duration: "Dec 2025 – Present",
+      status: "Present",
+      description: "Developed and maintained full-stack applications using React.js, Node.js, and MongoDB, improving API efficiency and user experience. Built and integrated RESTful APIs for frontend-backend communication. Implemented authentication systems using JWT and secure password hashing. Collaborated with team using Git version control.",
+      tech: ["React.js", "Node.js", "MongoDB", "REST APIs", "JWT", "Git"]
     },
     {
       id: 2,
-      role: "Full Stack Developer",
-      company: "Creative Solutions",
-      duration: "2021 - 2023",
-      description: "Developed and maintained multiple client projects, ranging from e-commerce sites to internal tools."
-    },
-    {
-      id: 3,
-      role: "Junior Web Developer",
-      company: "StartUp Hub",
-      duration: "2020 - 2021",
-      description: "Collaborated with designers to implement pixel-perfect UIs and interactive components."
+      role: "Web Development Intern",
+      company: "PROXENIX",
+      location: "Delhi",
+      duration: "June 2024 – May 2025",
+      status: "Completed",
+      description: "Developed and tested web applications using HTML, CSS, JavaScript, and React. Managed version control using Git for collaborative development. Analyzed user requirements and converted them into functional solutions. Worked with designers to build user-friendly UI components.",
+      tech: ["HTML", "CSS", "JavaScript", "React", "Git"]
     }
   ],
   hobbies: [

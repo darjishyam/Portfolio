@@ -3,6 +3,8 @@ import React, { useEffect } from 'react';
 import PortfolioNavbar from '../components/Portfolio/PortfolioNavbar';
 import Hero from '../components/Portfolio/Hero';
 import ProjectsGrid from '../components/Portfolio/ProjectsGrid';
+import Experience from '../components/Portfolio/Experience';
+import Certificates from '../components/Portfolio/Certificates';
 import SkillsGrid from '../components/Portfolio/SkillsGrid';
 import Hobbies from '../components/Portfolio/Hobbies';
 import ContactSection from '../components/Portfolio/ContactSection';
@@ -23,6 +25,8 @@ const PortfolioPage = () => {
             <PortfolioNavbar />
             <Hero />
             <div id="skills"><SkillsGrid /></div>
+            <div id="experience"><Experience /></div>
+            <div id="certificates"><Certificates /></div>
             <div id="projects"><ProjectsGrid /></div>
             <div id="hobbies"><Hobbies /></div>
             <div id="contact" style={{ paddingTop: '4rem', background: 'var(--bg-light)' }}>
