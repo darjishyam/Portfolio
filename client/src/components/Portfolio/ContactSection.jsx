@@ -30,16 +30,22 @@ const ContactSection = () => {
         setStatus({ type: "", message: "" });
 
         try {
-            const response = await axios.post(`${API_URL}/contact`, formData);
-            setStatus({ type: "success", message: response.data.message });
+            const { name, email, message } = formData;
+            
+            // Construct the email subject and body
+            const subject = encodeURIComponent(`New Contact Form Submission from ${name}`);
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            
+            // Open the user's default email client
+            window.location.href = `mailto:${contactInfo.email}?subject=${subject}&body=${body}`;
+
+            setStatus({ type: "success", message: "Opening your email client..." });
             setFormData({ name: "", email: "", message: "" });
+
+            // Still save to database in the background (even if Render blocks the email part)
+            await axios.post(`${API_URL}/contact`, formData);
         } catch (error) {
-            setStatus({
-                type: "error",
-                message:
-                    error.response?.data?.message ||
-                    "Failed to send message. Please try again.",
-            });
+            console.error("Database save error:", error);
         } finally {
             setLoading(false);
         }
